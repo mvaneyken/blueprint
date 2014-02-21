@@ -1,0 +1,6 @@
+fr:
+  navbar:
+    home: "Home"
+  navbar_admin:
+    administration: "Administration"
+    user: "User's"

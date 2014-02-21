@@ -1,0 +1,17 @@
+<h2>Forgot Your Password?</h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= render partial: 'shared/errors', locals: {f: f} %>
+
+  <div class="form-inputs">
+    <%= f.input :email, :required => true, :autofocus => true %>
+  </div>
+
+  <div>
+    <%= f.button :submit, "Send Reset Password Instructions", :class => "btn btn-info" %>
+  </div>
+<% end %>
+
+<div class="form-actions">
+  <%= render "users/shared/links" %>
+</div>

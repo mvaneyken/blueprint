@@ -1,0 +1,7 @@
+- if user_signed_in?
+  %li#user.dropdown
+    %a.dropdown-toggle{:'data-toggle' => 'dropdown'}
+      = t('navbar_user.administration')
+      <span class="caret"></span></a>
+    %ul.dropdown-menu
+      %li.menu-list= link_to I18n.t('navbar_admin.user'), users_path

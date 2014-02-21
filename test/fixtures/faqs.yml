@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sequence: 1
+  publish_on: 2014-01-30
+  cease_after: 2014-01-30
+
+two:
+  sequence: 1
+  publish_on: 2014-01-30
+  cease_after: 2014-01-30

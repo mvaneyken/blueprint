@@ -1,0 +1,6 @@
+Application overview is in README.md
+
+For technical documentation:
+1. Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+2. Results will be in ../app_documents/blueprint/index.html
+

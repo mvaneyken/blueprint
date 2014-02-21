@@ -1,0 +1,19 @@
+$navbarHeight: 60px;
+$navbarBackground: silver;
+$navbarBackgroundHighlight: black;
+$navbarText: white;
+$navbarBrandColor: white;
+$navbarLinkColor: white;
+$navbarLinkColorHover: lightgreen;
+$navbarLinkColorActive: lightgreen;
+$navbarLinkBackgroundActive: transparent;
+
+@import "bootstrap";
+body {
+  padding-top: 80px;
+}
+@import "bootstrap/responsive";
+
+.navbar {
+  font-weight: bold;
+}

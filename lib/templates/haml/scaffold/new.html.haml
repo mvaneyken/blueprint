@@ -1,0 +1,5 @@
+%h1 New <%= singular_table_name %>
+
+= render 'form'
+
+= render :partial => 'shared/new_links', :locals => {:back_path => <%= plural_table_name %>_path }

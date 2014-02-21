@@ -1,0 +1,32 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container-fluid
+      %a.btn.btn-navbar{:data => {:toggle => "collapse", :target => ".nav-collapse"}}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to Settings.brand, nil, :class => 'brand'
+
+      %ul.nav.pull-right
+        %li= link_to 'Sign Up', new_user_registration_path
+
+        - if user_signed_in?
+          %li.dropdown
+            %a#current-user.dropdown-toggle{:role => :button, :data => {:toggle => "dropdown", :target => '#'}}
+              = current_user.email.split('@').first
+              %span.caret
+            %ul.dropdown-menu{:role => :menu, 'aria-labeledby' => 'current-user'}
+              %li.menu_list{:role => :menuitem}= link_to 'Change Password', edit_user_registration_path
+              %li.menu_list{:role => :menuitem}= link_to 'Sign Out', destroy_user_session_path, :method => 'delete'
+        - else
+          %li= link_to 'Sign In', new_user_session_path
+
+        - if I18n.locale == I18n.default_locale
+          %li= link_to icon_with_label('icon-globe', "français"), :locale=>'fr'
+        - else
+          %li= link_to icon_with_label('icon-globe', "English"), :locale=>'en'
+
+      .nav-collapse.collapse
+        %ul.nav
+          %li= link_to I18n.t('navbar.home'), home_path
+          = render 'shared/navbar_admin'

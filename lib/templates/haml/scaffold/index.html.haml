@@ -1,0 +1,22 @@
+%h1 Listing <%= plural_table_name %>
+
+%table.table
+  %thead
+    %tr
+<% attributes.each do |attribute| -%>
+      %th <%= attribute.human_name %>
+<% end -%>
+      %th Actions
+  %tbody
+    - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
+      %tr
+<% attributes.each do |attribute| -%>
+        %td= <%= singular_table_name %>.<%= attribute.name %>
+<% end -%>
+        %td
+          = link_to 'Show', <%= singular_table_name %>, :class => 'btn btn-mini'
+          = link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>), :class => 'btn btn-mini'
+          = link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger'
+%br
+
+= render :partial => 'shared/index_links', :locals => {:label_new => <%= '"New ' + singular_table_name + '"' %>, :new_path => new_<%= singular_table_name %>_path}

@@ -1,0 +1,13 @@
+%p#notice= notice
+
+
+%fieldset
+  %legend Users
+  %p
+    %b Email:
+    = @user.email
+  %p
+    %b Name:
+    = @user.name
+
+  = render :partial => 'shared/show_links', :locals => {:back_path => users_path}

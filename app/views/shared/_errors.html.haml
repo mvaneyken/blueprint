@@ -1,0 +1,5 @@
+- if f.object.errors.present?
+  .alert.alert-error.fade.in{:data => {:alert => 'alert'} }
+    %a{:class => "close", :data => {:dismiss => 'alert'}, :href => "#"} ×
+    = f.error_notification
+    %i.text-error= f.object.errors.full_messages.join('. ')

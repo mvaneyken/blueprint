@@ -1,0 +1,14 @@
+database:
+  username: '_secret_'
+  password: '_secret_'
+mailbox:
+  site_url: '_a_value'
+  sender: '_a_value'
+  domain: '_a_value'
+  server: '_a_value'
+  username: '_a_value'
+  password: '_a_value'
+stripe:
+  public_key: '_a_key_'
+  api_key: '_a_key_'
+  currency: 'CAD'

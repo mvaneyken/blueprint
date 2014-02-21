@@ -1,0 +1,20 @@
+/* DOM classes */
+/***************/
+
+
+/* Named classes */
+/*****************/
+
+.footer {
+  padding-top: 10px; 
+}
+
+.nested-fields {
+  border-top: 1px solid lightgrey;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+.add-fields-btn {
+  margin-top: 5px;
+}

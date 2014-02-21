@@ -1,0 +1,73 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    :css
+      table.bottomBorder { border-collapse:collapse; }
+      table.bottomBorder td, table.bottomBorder th { border-bottom:1px solid black;padding:5px; }
+  %body
+  %h1 Shipment Confirmation
+
+  %p= "Your order has been shipped via #{@shipment.shipping_service.carrier_service}.  Your tracking number is #{@shipment.tracking_number}."
+
+  %p
+    %b Customer Name:
+    = @shipment.customer_order.ship_to_name
+  %p
+    %b Email:
+    = @shipment.customer_order.email
+  %hr
+  - if @shipment.customer_order.ship_to_address == @shipment.customer_order.billing_address
+    %table
+      %thead
+        %tr
+          %th Shipping Address:
+      %tbody
+        %tr
+          %td= @shipment.customer_order.ship_to_name
+        %tr
+          %td= @shipment.customer_order.ship_to_address
+        %tr
+          %td= "#{@shipment.customer_order.ship_to_city}, #{@shipment.customer_order.ship_to_province} #{@shipment.customer_order.ship_to_postal_code}"
+  - else
+    %table{:style => 'width: 45%; float: right;'}
+      %thead
+        %tr
+          %th Billing Address:
+      %tbody
+        %tr
+          %td= @shipment.customer_order.billing_name
+        %tr
+          %td= "#{@shipment.customer_order.billing_city}, #{@shipment.customer_order.billing_province}"
+    %table{:style => 'width: 45%;'}
+      %thead
+        %tr
+          %th Shipping Address:
+      %tbody
+        %tr
+          %td= @shipment.customer_order.ship_to_name
+        %tr
+          %td= @shipment.customer_order.ship_to_address
+        %tr
+          %td= "#{@shipment.customer_order.ship_to_city}, #{@shipment.customer_order.ship_to_province} #{@shipment.customer_order.ship_to_postal_code}"
+
+  %hr
+  %table.bottomBorder
+    %thead
+      %tr
+        %th SKU
+        %th Description
+        %th Sale Price
+        %th Quantity
+        %th Extended
+    %tbody
+      - @shipment.customer_order.customer_order_items.each do |customer_order_item|
+        %tr
+          %td= customer_order_item.sku
+          %td= customer_order_item.description
+          %td= number_to_currency customer_order_item.sale_price
+          %td= customer_order_item.quantity
+          %td= number_to_currency customer_order_item.extended_price
+      %tr
+        %td{:colspan => 4} Subtotal:
+        %td= number_to_currency @shipment.customer_order.subtotal
