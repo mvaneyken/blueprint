@@ -40,3 +40,6 @@ Results will be in ../app_documents/blueprint/index.html
 * Marc van Eyken
 * Chris Favreau
 
+# Customization
+
+* Website for custom button colors: http://charliepark.org/bootstrap_buttons/

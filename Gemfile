@@ -30,6 +30,7 @@ gem 'simple_form', '~> 2.1'               # Manage forms
 # gem 'transitions', '~> 0.1.4', require: ['transitions', 'active_model/transitions'] # Implement state machine
 # gem 'carmen-rails', '~> 1.0.0'
 gem 'unicorn'                             # Use unicorn as the app server
+# gem 'classy_enum'                         # Will use this at later date to create custom Rspec templates, Website for usage(http://beerlington.com/blog/2013/06/23/creating-a-custom-rspec-generator/)
 
 group :development do
   gem "better_errors"                     # Replace Rails error page with a more useful error page
